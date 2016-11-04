@@ -2,10 +2,9 @@ language : php
 sudo: required
 services:
   - docker
-env
-  global
+env:
+  global:
     - COMMIT=$(TRAVIS_COMMIT::8)
-
 script:
   - export REPO=dadohp/a-php
   - docker build -t REPO .
