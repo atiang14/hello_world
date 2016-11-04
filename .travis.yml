@@ -7,7 +7,7 @@ env:
     - COMMIT=$(TRAVIS_COMMIT::8)
 script:
   - export REPO=dadohp/a-php
-  - docker build -t REPO .
+  - docker build -t $REPO .
   - docker images
   - docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
   - export TAG='if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi'
